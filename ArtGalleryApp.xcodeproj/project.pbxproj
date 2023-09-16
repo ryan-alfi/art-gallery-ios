@@ -13,6 +13,25 @@
 		835F2E5D2AB4B5E9008092BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835F2E5B2AB4B5E9008092BB /* LaunchScreen.storyboard */; };
 		835F2E712AB4D18D008092BB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E6F2AB4D18D008092BB /* SearchViewController.swift */; };
 		835F2E722AB4D18D008092BB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F2E702AB4D18D008092BB /* SearchViewController.xib */; };
+		835F2E752AB5F8A2008092BB /* ArtworksRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E742AB5F8A2008092BB /* ArtworksRemoteRepository.swift */; };
+		835F2E782AB5FBD0008092BB /* ArtworksResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E772AB5FBD0008092BB /* ArtworksResponseModel.swift */; };
+		835F2E7A2AB5FFD8008092BB /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E792AB5FFD8008092BB /* SearchResponseModel.swift */; };
+		835F2E7E2AB6029B008092BB /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E7D2AB6029A008092BB /* NetworkRequestService.swift */; };
+		835F2E802AB60305008092BB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E7F2AB60305008092BB /* Constant.swift */; };
+		835F2E822AB6076A008092BB /* ArtworksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E812AB6076A008092BB /* ArtworksDataSource.swift */; };
+		835F2E862AB6085A008092BB /* GetListArtworksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E852AB6085A008092BB /* GetListArtworksUseCase.swift */; };
+		835F2E8A2AB6096C008092BB /* ArtworksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E892AB6096C008092BB /* ArtworksRequest.swift */; };
+		835F2E8C2AB60C4F008092BB /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E8B2AB60C4F008092BB /* DependencyInjection.swift */; };
+		835F2E8E2AB60CBA008092BB /* RepositoryInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E8D2AB60CBA008092BB /* RepositoryInjection.swift */; };
+		835F2E902AB60D68008092BB /* DataSourceInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E8F2AB60D68008092BB /* DataSourceInjection.swift */; };
+		835F2E952AB60EFE008092BB /* UseCaseInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E942AB60EFE008092BB /* UseCaseInjection.swift */; };
+		835F2E972AB61151008092BB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E962AB61151008092BB /* SearchViewModel.swift */; };
+		835F2E992AB611FD008092BB /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E982AB611FD008092BB /* BaseViewModel.swift */; };
+		835F2E9B2AB61D25008092BB /* SearchArtworksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E9A2AB61D25008092BB /* SearchArtworksUseCase.swift */; };
+		835F2E9F2AB62FAB008092BB /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E9E2AB62FAB008092BB /* UICollectionView+Ext.swift */; };
+		835F2EA22AB6301D008092BB /* ArtworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2EA12AB6301C008092BB /* ArtworkCollectionViewCell.swift */; };
+		835F2EA52AB64158008092BB /* PageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2EA42AB64158008092BB /* PageLoadable.swift */; };
+		835F2EA92AB64A2F008092BB /* LoadingReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2EA82AB64A2F008092BB /* LoadingReuseableView.swift */; };
 		BF7E369B5331C0C51842A1A3 /* Pods_ArtGalleryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9320CA8B95E107F15A79B41B /* Pods_ArtGalleryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +45,25 @@
 		835F2E5E2AB4B5E9008092BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		835F2E6F2AB4D18D008092BB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		835F2E702AB4D18D008092BB /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		835F2E742AB5F8A2008092BB /* ArtworksRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRemoteRepository.swift; sourceTree = "<group>"; };
+		835F2E772AB5FBD0008092BB /* ArtworksResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksResponseModel.swift; sourceTree = "<group>"; };
+		835F2E792AB5FFD8008092BB /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
+		835F2E7D2AB6029A008092BB /* NetworkRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestService.swift; sourceTree = "<group>"; };
+		835F2E7F2AB60305008092BB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		835F2E812AB6076A008092BB /* ArtworksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksDataSource.swift; sourceTree = "<group>"; };
+		835F2E852AB6085A008092BB /* GetListArtworksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListArtworksUseCase.swift; sourceTree = "<group>"; };
+		835F2E892AB6096C008092BB /* ArtworksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRequest.swift; sourceTree = "<group>"; };
+		835F2E8B2AB60C4F008092BB /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		835F2E8D2AB60CBA008092BB /* RepositoryInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInjection.swift; sourceTree = "<group>"; };
+		835F2E8F2AB60D68008092BB /* DataSourceInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceInjection.swift; sourceTree = "<group>"; };
+		835F2E942AB60EFE008092BB /* UseCaseInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseInjection.swift; sourceTree = "<group>"; };
+		835F2E962AB61151008092BB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		835F2E982AB611FD008092BB /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		835F2E9A2AB61D25008092BB /* SearchArtworksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtworksUseCase.swift; sourceTree = "<group>"; };
+		835F2E9E2AB62FAB008092BB /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		835F2EA12AB6301C008092BB /* ArtworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionViewCell.swift; sourceTree = "<group>"; };
+		835F2EA42AB64158008092BB /* PageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLoadable.swift; sourceTree = "<group>"; };
+		835F2EA82AB64A2F008092BB /* LoadingReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingReuseableView.swift; sourceTree = "<group>"; };
 		9320CA8B95E107F15A79B41B /* Pods_ArtGalleryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtGalleryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63516A779072BCB7014F541 /* Pods-ArtGalleryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtGalleryApp.debug.xcconfig"; path = "Target Support Files/Pods-ArtGalleryApp/Pods-ArtGalleryApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +134,8 @@
 		835F2E6A2AB4D11D008092BB /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				835F2E7C2AB60282008092BB /* Network */,
+				835F2E7B2AB60274008092BB /* DI */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -103,6 +143,9 @@
 		835F2E6B2AB4D132008092BB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				835F2E842AB60827008092BB /* UseCases */,
+				835F2E832AB607C2008092BB /* Repositories */,
+				835F2E762AB5FBBE008092BB /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -110,6 +153,7 @@
 		835F2E6C2AB4D139008092BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				835F2E732AB5F81F008092BB /* RemoteDataSource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -117,6 +161,11 @@
 		835F2E6D2AB4D13F008092BB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				835F2EAA2AB6544D008092BB /* Views */,
+				835F2E9D2AB62F71008092BB /* Base */,
+				835F2E9C2AB62F69008092BB /* Extensions */,
+				835F2EA32AB64120008092BB /* Protocols */,
+				835F2E7F2AB60305008092BB /* Constant.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -124,10 +173,146 @@
 		835F2E6E2AB4D171008092BB /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
+				835F2EA02AB62FFE008092BB /* Subviews */,
 				835F2E6F2AB4D18D008092BB /* SearchViewController.swift */,
 				835F2E702AB4D18D008092BB /* SearchViewController.xib */,
+				835F2E962AB61151008092BB /* SearchViewModel.swift */,
 			);
 			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		835F2E732AB5F81F008092BB /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E922AB60ECE008092BB /* InjectionKey */,
+				835F2E812AB6076A008092BB /* ArtworksDataSource.swift */,
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		835F2E762AB5FBBE008092BB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E882AB60951008092BB /* Response */,
+				835F2E872AB60948008092BB /* Request */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		835F2E7B2AB60274008092BB /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E8B2AB60C4F008092BB /* DependencyInjection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		835F2E7C2AB60282008092BB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E7D2AB6029A008092BB /* NetworkRequestService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		835F2E832AB607C2008092BB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E912AB60EBE008092BB /* InjectionKey */,
+				835F2E742AB5F8A2008092BB /* ArtworksRemoteRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		835F2E842AB60827008092BB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E932AB60EE4008092BB /* InjectionKey */,
+				835F2E852AB6085A008092BB /* GetListArtworksUseCase.swift */,
+				835F2E9A2AB61D25008092BB /* SearchArtworksUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		835F2E872AB60948008092BB /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E892AB6096C008092BB /* ArtworksRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		835F2E882AB60951008092BB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E772AB5FBD0008092BB /* ArtworksResponseModel.swift */,
+				835F2E792AB5FFD8008092BB /* SearchResponseModel.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		835F2E912AB60EBE008092BB /* InjectionKey */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E8D2AB60CBA008092BB /* RepositoryInjection.swift */,
+			);
+			path = InjectionKey;
+			sourceTree = "<group>";
+		};
+		835F2E922AB60ECE008092BB /* InjectionKey */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E8F2AB60D68008092BB /* DataSourceInjection.swift */,
+			);
+			path = InjectionKey;
+			sourceTree = "<group>";
+		};
+		835F2E932AB60EE4008092BB /* InjectionKey */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E942AB60EFE008092BB /* UseCaseInjection.swift */,
+			);
+			path = InjectionKey;
+			sourceTree = "<group>";
+		};
+		835F2E9C2AB62F69008092BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E9E2AB62FAB008092BB /* UICollectionView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		835F2E9D2AB62F71008092BB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				835F2E982AB611FD008092BB /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		835F2EA02AB62FFE008092BB /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				835F2EA12AB6301C008092BB /* ArtworkCollectionViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		835F2EA32AB64120008092BB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				835F2EA42AB64158008092BB /* PageLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		835F2EAA2AB6544D008092BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				835F2EA82AB64A2F008092BB /* LoadingReuseableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FA47B59037A16506C8C92517 /* Pods */ = {
@@ -254,9 +439,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835F2E7A2AB5FFD8008092BB /* SearchResponseModel.swift in Sources */,
+				835F2E8E2AB60CBA008092BB /* RepositoryInjection.swift in Sources */,
+				835F2E992AB611FD008092BB /* BaseViewModel.swift in Sources */,
+				835F2E972AB61151008092BB /* SearchViewModel.swift in Sources */,
+				835F2EA52AB64158008092BB /* PageLoadable.swift in Sources */,
+				835F2E952AB60EFE008092BB /* UseCaseInjection.swift in Sources */,
+				835F2E902AB60D68008092BB /* DataSourceInjection.swift in Sources */,
+				835F2EA92AB64A2F008092BB /* LoadingReuseableView.swift in Sources */,
+				835F2E8A2AB6096C008092BB /* ArtworksRequest.swift in Sources */,
+				835F2E8C2AB60C4F008092BB /* DependencyInjection.swift in Sources */,
+				835F2E9B2AB61D25008092BB /* SearchArtworksUseCase.swift in Sources */,
 				835F2E512AB4B5E6008092BB /* AppDelegate.swift in Sources */,
+				835F2E862AB6085A008092BB /* GetListArtworksUseCase.swift in Sources */,
 				835F2E712AB4D18D008092BB /* SearchViewController.swift in Sources */,
+				835F2E802AB60305008092BB /* Constant.swift in Sources */,
+				835F2E7E2AB6029B008092BB /* NetworkRequestService.swift in Sources */,
+				835F2E822AB6076A008092BB /* ArtworksDataSource.swift in Sources */,
+				835F2E752AB5F8A2008092BB /* ArtworksRemoteRepository.swift in Sources */,
+				835F2E9F2AB62FAB008092BB /* UICollectionView+Ext.swift in Sources */,
+				835F2E782AB5FBD0008092BB /* ArtworksResponseModel.swift in Sources */,
 				835F2E532AB4B5E6008092BB /* SceneDelegate.swift in Sources */,
+				835F2EA22AB6301D008092BB /* ArtworkCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +600,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtGalleryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -425,6 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtGalleryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
