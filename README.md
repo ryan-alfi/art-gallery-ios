@@ -37,6 +37,8 @@ From there, you should be good to go to build and run ArtGalleryApp!
 - Enter your search query, such as the artist's name or artwork title, into the search bar.
 - As you type, the app will display relevant results in real-time.
 
+https://github.com/ryan-alfi/art-gallery-ios/assets/7485614/98aa4fec-0692-4d5d-bca6-d282c8a06739
+
 ## Credits
 
 - Artwork images and information sourced from [Art Institute of Chicago](https://api.artic.edu/docs/).
