@@ -15,8 +15,10 @@ final class SearchViewModel: BaseViewModel {
     var scheduler: ImmediateSchedulerType = MainScheduler.asyncInstance
     
     let artworksDataSubject = PublishSubject<ArtworksResponseModel>()
-    let searchDataSubject = PublishSubject<[Artwork]>()
     private var artworksData = [Artwork]()
+    
+    let searchStateSubject = BehaviorSubject<LoadingState>(value: .success)
+    let searchDataSubject = PublishSubject<[Artwork]>()
     
     func getListArtworks(page: Int = 1) {
         self.stateSubject.onNext(.loading)
@@ -34,14 +36,14 @@ final class SearchViewModel: BaseViewModel {
     }
     
     func search(with keyword: String) {
-        self.stateSubject.onNext(.loading)
+        self.searchStateSubject.onNext(.loading)
         
         searchArtworksUseCase.execute(keyword: keyword).observe(on: scheduler)
             .subscribe(onNext: { response in
-                self.stateSubject.onNext(.success)
+                self.searchStateSubject.onNext(.success)
                 self.searchDataSubject.onNext(response)
             }) { error in
-                self.stateSubject.onNext(.failed)
+                self.searchStateSubject.onNext(.failed)
                 debugPrint("search error:\(error)")
             }.disposed(by: disposeBag)
     }

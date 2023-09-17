@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83351B7F2AB71C80007C867D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83351B7E2AB71C80007C867D /* UIView+Ext.swift */; };
 		835F2E512AB4B5E6008092BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E502AB4B5E6008092BB /* AppDelegate.swift */; };
 		835F2E532AB4B5E6008092BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F2E522AB4B5E6008092BB /* SceneDelegate.swift */; };
 		835F2E5A2AB4B5E9008092BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835F2E592AB4B5E9008092BB /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		4DB60A22B76BD15D1757EB0C /* Pods-ArtGalleryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtGalleryApp.release.xcconfig"; path = "Target Support Files/Pods-ArtGalleryApp/Pods-ArtGalleryApp.release.xcconfig"; sourceTree = "<group>"; };
+		83351B7E2AB71C80007C867D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		835F2E4D2AB4B5E5008092BB /* ArtGalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtGalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835F2E502AB4B5E6008092BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		835F2E522AB4B5E6008092BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				835F2E9E2AB62FAB008092BB /* UICollectionView+Ext.swift */,
+				83351B7E2AB71C80007C867D /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				835F2E8C2AB60C4F008092BB /* DependencyInjection.swift in Sources */,
 				835F2E9B2AB61D25008092BB /* SearchArtworksUseCase.swift in Sources */,
 				835F2E512AB4B5E6008092BB /* AppDelegate.swift in Sources */,
+				83351B7F2AB71C80007C867D /* UIView+Ext.swift in Sources */,
 				835F2E862AB6085A008092BB /* GetListArtworksUseCase.swift in Sources */,
 				835F2E712AB4D18D008092BB /* SearchViewController.swift in Sources */,
 				835F2E802AB60305008092BB /* Constant.swift in Sources */,

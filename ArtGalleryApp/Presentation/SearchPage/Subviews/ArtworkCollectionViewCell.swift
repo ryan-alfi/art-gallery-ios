@@ -76,7 +76,13 @@ class ArtworkCollectionViewCell: UICollectionViewCell {
     
     private func updateUI() {
         guard let data = data else { return }
-        imageView.kf.setImage(with: data.imageUrl)
+        imageView.kf.setImage(with: data.imageUrl, placeholder: placeholderImage())
         titleLabel.text = data.title
+    }
+    
+    private func placeholderImage() -> UIImage {
+        let view: UIView = UIView()
+        view.backgroundColor = .lightGray
+        return view.asImage()
     }
 }

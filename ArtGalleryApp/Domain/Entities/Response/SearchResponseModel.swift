@@ -8,16 +8,16 @@
 import Foundation
 
 struct SearchResponse: Codable {
-    let data: [NextLink]
+    let data: [SearchItem]
 }
 
-struct NextLink: Codable {
-    let apiLink: String
+struct SearchItem: Codable {
+    let title, apiLink: String
     let id: Int
 
     enum CodingKeys: String, CodingKey {
         case apiLink = "api_link"
-        case id
+        case id, title
     }
 }
 

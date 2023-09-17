@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, PageLoadable {
     
     private let viewModel = SearchViewModel()
     private let disposeBag = DisposeBag()
@@ -53,7 +53,6 @@ class SearchViewController: UIViewController {
             .distinctUntilChanged()
             .subscribe(onNext: {
                 self.searchDidFilled($0)
-                
             }).disposed(by: disposeBag)
         self.navigationItem.searchController = search
     }
@@ -94,6 +93,13 @@ class SearchViewController: UIViewController {
                 .subscribe(onNext: { result in
                     self.didFinishFetchArtworks(with: result)
                 }),
+            viewModel.searchStateSubject
+                .subscribe(onNext: {
+                    switch $0 {
+                    case .loading: self.showLoading()
+                    case .success, .failed: self.hideLoading()
+                    }
+                }),
             viewModel.searchDataSubject
                 .subscribe(onNext: { result in
                     self.didFinishSearch(with: result)
@@ -129,6 +135,7 @@ class SearchViewController: UIViewController {
         self.isLastPage = true
         
         viewModel.setArtworksData(with: artworks)
+        self.navigationItem.searchController?.searchBar.endEditing(true)
         
         collectionView.reloadData()
     }
@@ -170,7 +177,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         let defaultSize = CGSize(width: collectionView.bounds.size.width, height: 55)
         if self.isLoading {
-            return CGSize.zero
+            return defaultSize
         } else {
             return self.isLastPage ? CGSize.zero : defaultSize
         }

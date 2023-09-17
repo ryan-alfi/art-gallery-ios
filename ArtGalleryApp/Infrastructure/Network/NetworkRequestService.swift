@@ -34,7 +34,7 @@ class NetworkRequestService {
 
     func executeRequest<T: Decodable>(
         baseURL: String? = nil,
-        urlPath: String,
+        urlPath: String?,
         method: HTTPMethod,
         headers: Headers? = nil,
         queryParams: QueryParameters? = nil,
@@ -43,8 +43,8 @@ class NetworkRequestService {
         onlyNeedResponseStatusCode: Bool = false
     ) -> Observable<T> {
         return Observable.create { observer in
-            let baseURL = URL(string: Constant.URL.baseURL)!
-            let url = baseURL.appendingPathComponent(urlPath)
+            let baseURL = URL(string: baseURL ?? Constant.URL.baseURL)!
+            let url = urlPath != nil ? baseURL.appendingPathComponent(urlPath!) : baseURL
 
             var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
             components?.queryItems = queryParams
