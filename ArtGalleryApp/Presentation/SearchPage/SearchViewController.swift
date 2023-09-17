@@ -15,9 +15,9 @@ class SearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var page: Int = 1
     private var isLoading: Bool = false
+    private var isLastPage: Bool = false
     private var loadingView: LoadingReusableView?
-    
-    private let searchSubject = PublishSubject<String>()
+    private var keyword: String?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -52,7 +52,8 @@ class SearchViewController: UIViewController {
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: {
-                print($0)
+                self.searchDidFilled($0)
+                
             }).disposed(by: disposeBag)
         self.navigationItem.searchController = search
     }
@@ -71,7 +72,11 @@ class SearchViewController: UIViewController {
     // MARK: - Fetcher and Observer
     
     private func fetchRemoteData() {
-        viewModel.getListArtworks(page: self.page)
+        if let keyword {
+            viewModel.search(with: keyword)
+        } else {
+            viewModel.getListArtworks(page: self.page)
+        }
     }
 
     private func addViewModelObserver() {
@@ -88,14 +93,42 @@ class SearchViewController: UIViewController {
             viewModel.artworksDataSubject
                 .subscribe(onNext: { result in
                     self.didFinishFetchArtworks(with: result)
+                }),
+            viewModel.searchDataSubject
+                .subscribe(onNext: { result in
+                    self.didFinishSearch(with: result)
                 })
         )
+    }
+    
+    // MARK: - Helper
+    
+    private func searchDidFilled(_ keyword: String) {
+        if keyword.count > 2 {
+            self.keyword = keyword
+            fetchRemoteData()
+        } else if keyword.count == 0 {
+            self.keyword = nil
+            viewModel.clearArtworksData()
+            fetchRemoteData()
+        }
     }
     
     private func didFinishFetchArtworks(with result: ArtworksResponseModel) {
         self.page = result.pagination.currentPage
         
-        viewModel.artworksData = self.page == 1 ? result.data : viewModel.artworksData + result.data
+        self.isLastPage = result.data.count == 0 ? true : false
+        
+        viewModel.setArtworksData(with: result.data, isLoadMore: self.page == 1 ? false : true)
+        
+        collectionView.reloadData()
+    }
+    
+    private func didFinishSearch(with artworks: [Artwork]) {
+        self.page = 1
+        self.isLastPage = true
+        
+        viewModel.setArtworksData(with: artworks)
         
         collectionView.reloadData()
     }
@@ -106,17 +139,17 @@ class SearchViewController: UIViewController {
 // MARK: - UICollectionView Section
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.artworksData.count
+        viewModel.getArtworksData().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(with: ArtworkCollectionViewCell.self, for: indexPath)!
-        cell.data = viewModel.artworksData[indexPath.row]
+        cell.data = viewModel.getArtworksData(at: indexPath.item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(viewModel.artworksData[indexPath.row].imageUrl)
+        print(viewModel.getArtworksData(at: indexPath.item).imageUrl)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -126,8 +159,8 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.artworksData.count - 1 {
-            if !isLoading {
+        if indexPath.row == viewModel.getArtworksData().count - 1 {
+            if !isLoading && keyword == nil {
                 self.page += 1
                 fetchRemoteData()
             }
@@ -135,10 +168,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        let defaultSize = CGSize(width: collectionView.bounds.size.width, height: 55)
         if self.isLoading {
-            return CGSize(width: collectionView.bounds.size.width, height: 55)
+            return CGSize.zero
         } else {
-            return CGSize(width: collectionView.bounds.size.width, height: 55)
+            return self.isLastPage ? CGSize.zero : defaultSize
         }
     }
     

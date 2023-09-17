@@ -16,7 +16,7 @@ struct SearchArtworksUseCaseImpl: SearchArtworksUseCase {
     @Injected(\.artworksRepository)
     var repository: ArtworksRemoteRepository
     
-    func execute(keyword: String) -> RxSwift.Observable<[Artwork]> {
+    func execute(keyword: String) -> Observable<[Artwork]> {
         return repository.searchArtwork(withQuery: keyword)
     }
     
